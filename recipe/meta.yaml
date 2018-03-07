@@ -1,6 +1,6 @@
 {% set name = "weave" %}
-{% set version = "0.15.0" %}
-{% set sha256 = "4b7ac15abe2d1c0901c33db79d4bdcad8f2261198da36a48707b0023bca72f83" %}
+{% set version = "0.16.0" %}
+{% set sha256 = "1a3ee3d018c41e92ac0927f169116089524162992fb4fcf8832cba4a5019d54a" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
