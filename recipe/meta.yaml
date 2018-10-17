@@ -17,10 +17,10 @@ build:
 
 requirements:
   build:
-    - python
-    - numpy
+    - {{ compiler("cpp") }}
   host:
     - python
+    - numpy
     - pip
   run:
     - python
