@@ -19,14 +19,14 @@ requirements:
   build:
     - python
     - numpy
+  host:
+    - python
     - pip
   run:
     - python
     - numpy
     - bsddb  # [not win]
-    - gxx_linux-64  # [linux]
-    - clangxx_osx-64  # [osx]
-    - vs2008_win-64  # [win]
+    - {{ compiler("cpp") }}
 
 test:
   imports:
