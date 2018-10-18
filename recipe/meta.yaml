@@ -16,8 +16,6 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
-    - {{ compiler("cpp") }}
   host:
     - python
     - numpy
@@ -26,7 +24,7 @@ requirements:
     - python
     - numpy
     - bsddb  # [not win]
-    - {{ compiler("cpp") }}
+    - {{ compiler("cxx") }}
 
 test:
   imports:
