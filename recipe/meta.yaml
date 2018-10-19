@@ -11,18 +11,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: True  # [py3k]
-  script: python setup.py install --record record.txt
+  number: 1000
+  skip: True  # [py3k or not x86_64]
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
     - python
     - numpy
+    - pip
   run:
     - python
     - numpy
     - bsddb  # [not win]
+    - {{ compiler("cxx") }}
 
 test:
   imports:
@@ -32,7 +34,8 @@ test:
 
 about:
   home: https://pypi.python.org/pypi/weave
-  license: BSD 3-Clause
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
   summary: 'Weave: a C++ compiler for Python.'
   description: |
