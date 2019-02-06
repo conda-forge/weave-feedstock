@@ -11,18 +11,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [py3k or not x86_64]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
     - python
-    - numpy
+    - numpy<1.16
     - pip
   run:
     - python
-    - numpy
+    - numpy<1.16
     - bsddb  # [not win]
     - {{ compiler("cxx") }}
 
