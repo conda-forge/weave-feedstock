@@ -30,6 +30,7 @@ test:
   imports:
     - weave
   commands:
+    - REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /d 1  # [win]
     - python -c "import weave;assert weave.inline('int x=42; return_val=x;') == 42"
 
 about:
