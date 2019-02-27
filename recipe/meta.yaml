@@ -18,11 +18,11 @@ build:
 requirements:
   host:
     - python
-    - numpy<1.16
+    - numpy
     - pip
   run:
     - python
-    - numpy<1.16
+    - numpy
     - bsddb  # [not win]
     - {{ compiler("cxx") }}
 
