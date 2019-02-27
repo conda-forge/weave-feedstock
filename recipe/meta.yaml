@@ -1,6 +1,6 @@
 {% set name = "weave" %}
-{% set version = "0.16.0" %}
-{% set sha256 = "1a3ee3d018c41e92ac0927f169116089524162992fb4fcf8832cba4a5019d54a" %}
+{% set version = "0.17.0" %}
+{% set sha256 = "2703f3ae6d23ad47b5f09b6bcb7affd0fb587120a0c973e7be40ef24de709998" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,18 +11,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   skip: True  # [py3k or not x86_64]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
     - python
-    - numpy<1.16
+    - numpy
     - pip
   run:
     - python
-    - numpy<1.16
+    - numpy
     - bsddb  # [not win]
     - {{ compiler("cxx") }}
 
