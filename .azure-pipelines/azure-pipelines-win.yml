@@ -6,12 +6,12 @@ jobs:
 - job: win
   pool:
     vmImage: vs2017-win2016
-  timeoutInMinutes: 240
+  timeoutInMinutes: 360
   strategy:
     maxParallel: 4
     matrix:
-      win_cxx_compilervs2008python2.7:
-        CONFIG: win_cxx_compilervs2008python2.7
+      win_python2.7:
+        CONFIG: win_python2.7
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: False
   steps:
@@ -65,7 +65,7 @@ jobs:
 
     # Configure the VM
     - script: setup_conda_rc .\ .\recipe .\.ci_support\%CONFIG%.yaml
-    
+
     # Configure the VM.
     - script: |
         run_conda_forge_build_setup
