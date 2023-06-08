@@ -1,6 +1,6 @@
 {% set name = "weave" %}
-{% set version = "0.17.0" %}
-{% set sha256 = "2703f3ae6d23ad47b5f09b6bcb7affd0fb587120a0c973e7be40ef24de709998" %}
+{% set version = "0.20.0" %}
+{% set sha256 = "ee8fd1c98f412d00722ba5f5aeea63cb7f5ff51a6358556f61cca633f5112b7b" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -13,9 +13,9 @@ source:
     - python_requires.patch
 
 build:
-  number: 4
-  skip: True  # [py3k or not x86_64]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  skip: true  # [py3k or not x86_64]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
